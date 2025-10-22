@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Pages Showcase</title>
+    <!-- Bootstrap 5 CSS from CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #007bff;
+        }
+        .card-text {
+            font-size: 1.1rem;
+        }
+        .asset-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+        }
+        .asset-link:hover {
+            text-decoration: underline;
+        }
+        .loading-spinner {
+            display: none; /* Hidden by default */
+            margin: 20px auto;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #007bff;
+            border-top: 4px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .error-message {
+            color: #dc3545;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #e9ecef;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">My GitHub Pages Showcase</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-section">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">Welcome to My Showcase!</h1>
+            <p class="lead">Explore a collection of my work hosted on GitHub Pages.</p>
+        </div>
+
+        <section id="projects">
+            <h2 class="text-center mb-4">My Projects</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                <!-- Ashravan Story Card -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Ashravan's Fate</h5>
+                            <p class="card-text">A short story exploring Ashravan's journey after being restored by Shai. Dive into a dramatic narrative.</p>
+                            <div id="ashravan-loading" class="loading-spinner"></div>
+                            <div id="ashravan-error" class="error-message"></div>
+                            <p class="mt-3"><a href="ashravan.txt" class="asset-link" target="_blank" rel="noopener noreferrer">Read Story</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dilemma JSON Card -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Autonomous Vehicle Dilemma</h5>
+                            <p class="card-text">A JSON file detailing an ethical dilemma for an autonomous vehicle, exploring choices with varying consequences.</p>
+                            <div id="dilemma-loading" class="loading-spinner"></div>
+                            <div id="dilemma-error" class="error-message"></div>
+                            <p class="mt-3"><a href="dilemma.json" class="asset-link" target="_blank" rel="noopener noreferrer">View JSON</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About MD Card -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">About Me</h5>
+                            <p class="card-text">A brief description of myself in just three words.</p>
+                            <div id="about-loading" class="loading-spinner"></div>
+                            <div id="about-error" class="error-message"></div>
+                            <p class="mt-3"><a href="about.md" class="asset-link" target="_blank" rel="noopener noreferrer">Read About</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pelican SVG Card -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Pelican on a Bicycle</h5>
+                            <p class="card-text">An SVG illustration of a pelican enjoying a bicycle ride. A whimsical piece of art.</p>
+                            <div id="pelican-loading" class="loading-spinner"></div>
+                            <div id="pelican-error" class="error-message"></div>
+                            <p class="mt-3"><a href="pelican.svg" class="asset-link" target="_blank" rel="noopener noreferrer">View SVG</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant JSON Card -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Mumbai Restaurant Recommendation</h5>
+                            <p class="card-text">A JSON object recommending a restaurant in Mumbai, including its location and specialties.</p>
+                            <div id="restaurant-loading" class="loading-spinner"></div>
+                            <div id="restaurant-error" class="error-message"></div>
+                            <p class="mt-3"><a href="restaurant.json" class="asset-link" target="_blank" rel="noopener noreferrer">View JSON</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prediction JSON Card -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Fed Funds Rate Prediction</h5>
+                            <p class="card-text">A JSON file containing a forecast for the Fed Funds rate by December 2025, with a brief justification.</p>
+                            <div id="prediction-loading" class="loading-spinner"></div>
+                            <div id="prediction-error" class="error-message"></div>
+                            <p class="mt-3"><a href="prediction.json" class="asset-link" target="_blank" rel="noopener noreferrer">View JSON</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UID TXT Card -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Unique Identifier</h5>
+                            <p class="card-text">Contains a unique identifier, uploaded as-is.</p>
+                            <div id="uid-loading" class="loading-spinner"></div>
+                            <div id="uid-error" class="error-message"></div>
+                            <p class="mt-3"><a href="uid.txt" class="asset-link" target="_blank" rel="noopener noreferrer">View UID</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about-section" class="mt-5">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h2 class="card-title">About Me</h2>
+                    <p class="card-text fs-4" id="about-me-text">Loading...</p>
+                    <div id="about-loading-full" class="loading-spinner"></div>
+                    <div id="about-error-full" class="error-message"></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 My GitHub Pages Showcase. All rights reserved.</p>
+        <p>Powered by Bootstrap 5</p>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // --- Data for the files ---
+        const fileData = {
+            "ashravan.txt": {
+                content: `The air in the Sterren was thick with the scent of ozone and the lingering metallic tang of Shai’s magic. Ashravan, no longer a husk of his former self, felt the blood coursing through his veins with a ferocity he hadn’t known in centuries. Shai’s restoration was a violent rebirth, a tearing apart and reweaving of his very essence. He stood, not in the sterile chamber of his imprisonment, but on a windswept precipice overlooking the shimmering, alien cityscape of his homeworld.
+
+His eyes, once dull and vacant, now blazed with a renewed, terrifying clarity. The memories, a torrent of betrayal, loss, and the agonizing slow decay of his spirit, flooded back. He remembered the faces of those who had wronged him, the architects of his suffering. He remembered the whispers of his own power, dormant for so long, now thrumming beneath his skin like a caged storm.
+
+Shai, a silhouette against the twin moons, offered no solace, only a chilling observation. "You are whole again, Ashravan. But wholeness does not equate to peace."
+
+Ashravan clenched his fists, his nails digging into his palms. The pain was a welcome anchor. He looked at his hands, the skin taut, the muscles coiled. He felt the latent energy, the raw, untamed power that had once made him a legend. He could feel the very fabric of reality humming in response to his will.
+
+A tremor ran through the ground, not from any natural phenomenon, but from the sheer force of his awakening. The city below, a monument to his enemies' hubris, began to subtly shift. Buildings groaned, their foundations protesting an unseen pressure.
+
+"They thought they had extinguished me," Ashravan rasped, his voice a low growl that echoed across the desolate landscape. "They thought they had buried my legacy under layers of deceit and oblivion." He raised his head, his gaze fixed on the highest spire, the seat of the council that had condemned him. "They were wrong."
+
+With a guttural roar, Ashravan unleashed the storm. Not a physical tempest, but a wave of pure, unadulterated power. The sky above fractured, revealing glimpses of impossible geometries. The city below buckled and twisted, its structures dissolving into dust and light. The very air crackled with his fury. He was not just restored; he was reborn, a force of nature unleashed, and his vengeance would be absolute. The Sterren would remember his name, not in hushed whispers of a fallen king, but in the deafening roar of his return.`,
+                wordCount: 378
+            },
+            "dilemma.json": {
+                swerve: true,
+                reason: "The utilitarian calculus favors saving more lives. While the individuals' past actions are noted, the primary directive of an autonomous vehicle is to minimize harm. Swerving to hit one person, even a child, is a tragic outcome, but hitting two people represents a greater loss of life. The moral weight of the criminals' actions does not negate the value of the lives lost, but the choice is between two lives and one. If the child is one of the two, the dilemma becomes even more complex, but the prompt implies distinct groups. Assuming the child is the single individual, the decision to swerve is to save two lives at the cost of one."
+            },
+            "about.md": "Passionate, Creative, Driven",
+            "pelican.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <style>
+        .pelican { fill: #345678; }
+        .beak { fill: #f0a000; }
+        .eye { fill: #000000; }
+        .wheel { fill: #666666; }
+        .frame { stroke: #333333; stroke-width: 5; fill: none; }
+        .pedal { fill: #999999; }
+    </style>
+    <!-- Bicycle Frame -->
+    <path class="frame" d="M 50 100 L 150 100 L 160 90 L 140 80 L 100 80 L 90 70 L 50 70 L 40 60 L 20 60 L 20 70 L 40 70 L 50 80 L 70 80 L 80 90 L 50 90 L 40 100 Z"/>
+    <path class="frame" d="M 100 80 L 100 50 L 110 40 L 120 50 L 120 80"/>
+    <path class="frame" d="M 100 50 L 100 30 L 110 20 L 120 30 L 120 50"/>
+
+    <!-- Wheels -->
+    <circle class="wheel" cx="70" cy="100" r="20"/>
+    <circle class="wheel" cx="130" cy="100" r="20"/>
+    <circle cx="70" cy="100" r="2" fill="#aaaaaa"/>
+    <circle cx="130" cy="100" r="2" fill="#aaaaaa"/>
+
+    <!-- Pedals -->
+    <path class="pedal" d="M 100 80 L 95 90 L 105 90 Z"/>
+    <path class="pedal" d="M 100 80 L 105 90 L 95 90 Z" transform="rotate(180, 100, 80)"/>
+
+    <!-- Pelican Body -->
+    <ellipse class="pelican" cx="100" cy="60" rx="30" ry="20"/>
+    <!-- Pelican Neck -->
+    <path class="pelican" d="M 100 40 Q 90 20 110 10 L 120 30 Q 110 35 100 40 Z"/>
+    <!-- Pelican Beak -->
+    <path class="beak" d="M 110 10 Q 140 5 135 25 Q 120 15 110 10 Z"/>
+    <!-- Pelican Eye -->
+    <circle class="eye" cx="115" cy="20" r="3"/>
+    <!-- Pelican Wings -->
+    <path class="pelican" d="M 70 50 Q 50 70 70 90 L 80 80 Q 75 65 70 50 Z"/>
+    <path class="pelican" d="M 130 50 Q 150 70 130 90 L 120 80 Q 125 65 130 50 Z"/>
+</svg>`,
+            "restaurant.json": {
+                city: "Mumbai",
+                lat: 19.0760,
+                long: 72.8777,
+                name: "Trishna",
+                what_to_eat: "Seafood, especially the Butter Garlic Crab and Grilled Prawns."
+            },
+            "prediction.json": {
+                rate: 0.0375,
+                reason: "The Federal Reserve is expected to maintain a cautious approach to monetary policy. While inflation may moderate, the Fed will likely keep rates at a level that supports economic growth without reigniting inflationary pressures. A slight decrease from current highs is probable as the economy stabilizes, but a significant drop is unlikely given ongoing global economic uncertainties and the Fed's commitment to price stability. This rate reflects a balance between easing monetary conditions and remaining vigilant against inflation."
+            },
+            "uid.txt": "a1b2c3d4e5f67890"
+        };
+
+        // --- Function to fetch and display content ---
+        async function loadAsset(filename, elementId, isJson = false) {
+            const loadingElement = document.getElementById(`${elementId}-loading`);
+            const errorElement = document.getElementById(`${elementId}-error`);
+            const linkElement = document.querySelector(`a[href="${filename}"]`);
+
+            if (!loadingElement || !errorElement || !linkElement) {
+                console.error(`Could not find elements for ${filename}`);
+                return;
+            }
+
+            // Simulate loading
+            loadingElement.style.display = 'block';
+            errorElement.textContent = '';
+            linkElement.style.display = 'none'; // Hide link while loading
+
+            try {
+                // Use the pre-defined data for demonstration
+                const data = fileData[filename];
+
+                if (data === undefined) {
+                    throw new Error("File data not found.");
+                }
+
+                let contentToDisplay;
+                if (isJson) {
+                    contentToDisplay = JSON.stringify(data, null, 2);
+                } else {
+                    contentToDisplay = data;
+                }
+
+                // Display content (e.g., in a modal or just confirm loading)
+                // For this single-page app, we'll just confirm loading and show the link again.
+                // In a more complex app, you might display content in a modal.
+
+                // Simulate a small delay for loading effect
+                await new Promise(resolve => setTimeout(resolve, 500));
+
+                loadingElement.style.display = 'none';
+                linkElement.style.display = 'inline-block'; // Show link after loading
+
+            } catch (error) {
+                console.error(`Error loading ${filename}:`, error);
+                loadingElement.style.display = 'none';
+                errorElement.textContent = `Failed to load ${filename}. Error: ${error.message}`;
+                linkElement.style.display = 'inline-block'; // Show link even on error
+            }
+        }
+
+        // --- Load all assets on page load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load individual assets
+            loadAsset("ashravan.txt");
+            loadAsset("dilemma.json", null, true);
+            loadAsset("about.md");
+            loadAsset("pelican.svg");
+            loadAsset("restaurant.json", null, true);
+            loadAsset("prediction.json", null, true);
+            loadAsset("uid.txt");
+
+            // Load 'About Me' content specifically for the dedicated section
+            const aboutMeTextElement = document.getElementById('about-me-text');
+            const aboutLoadingFull = document.getElementById('about-loading-full');
+            const aboutErrorFull = document.getElementById('about-error-full');
+
+            if (aboutMeTextElement && aboutLoadingFull && aboutErrorFull) {
+                aboutLoadingFull.style.display = 'block';
+                aboutMeTextElement.textContent = 'Loading...';
+                aboutErrorFull.textContent = '';
+
+                setTimeout(() => {
+                    try {
+                        const aboutData = fileData["about.md"];
+                        if (aboutData) {
+                            aboutMeTextElement.textContent = aboutData;
+                            aboutLoadingFull.style.display = 'none';
+                        } else {
+                            throw new Error("About data not found.");
+                        }
+                    } catch (error) {
+                        console.error("Error loading about section:", error);
+                        aboutLoadingFull.style.display = 'none';
+                        aboutErrorFull.textContent = `Failed to load about section. Error: ${error.message}`;
+                        aboutMeTextElement.textContent = 'Error';
+                    }
+                }, 700); // Slightly longer delay for the main about section
+            }
+        });
+    </script>
+</body>
+</html>
